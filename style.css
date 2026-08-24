@@ -1,0 +1,312 @@
+
+* {
+     margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    color: #ffffff;
+      /* Gradasi warna latar lembut ala pemandangan teal/pink */
+    background: linear-gradient(180deg, #62a3ab 0%, #7db9be 45%, #e1b4b9 75%, #5a8e93 100%);
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-x: hidden;
+}
+
+ .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 3rem;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+.logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+ .nav-links a {
+      color: rgba(255, 255, 255, 0.85);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+
+.nav-links a:hover {
+      color: #ffffff;
+    }
+
+.nav-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-secondary {
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 20px;
+      cursor: pointer;
+      backdrop-filter: blur(5px);
+      transition: all 0.3s ease;
+}
+
+.btn-primary {
+      background: linear-gradient(135deg, #4bd5ca, #7d96ed);
+      border: none;
+      color: white;
+      padding: 0.6rem 1.4rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+.btn-secondary:hover, .btn-primary:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+.hamburger {
+  display: none;
+}
+
+.mobile-only {
+  display: none; /* Sembunyi di Desktop */
+}
+
+.hero {
+      position: relative;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+.badge {
+      display: inline-block;
+      padding: 0.4rem 1.2rem;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      border-radius: 20px;
+      font-size: 0.85rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+.hero-title {
+      font-size: 3.8rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+.hero-subtitle {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.6;
+    }
+
+.cta-group {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+.btn-main {
+      background: linear-gradient(90deg, #4ed3c4, #8b80f9);
+      border: none;
+      padding: 0.9rem 2rem;
+      color: white;
+      font-weight: 600;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 1rem;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+.btn-outline {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      padding: 0.9rem 2rem;
+      color: white;
+      font-weight: 500;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+.dev-widgets {
+    position: absolute;
+    right: -100px;
+    bottom: -20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 15px 20px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: float 4s ease-in-out infinite alternate;
+}
+
+.glass-card:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.glass-card:nth-child(3) {
+      grid-column: span 2;
+      animation-delay: 2s;
+    }
+
+@keyframes float {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-12px); }
+    }
+
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+@media (max-width: 768px) {
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 1.5rem;
+    min-height: 64px;
+    flex-wrap: wrap;
+  }
+  
+
+  /* 1. Baris Atas: Logo di Tengah */
+  .logo {
+    display: none;
+  }
+
+  .nav-buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .btn-secondary {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: start;
+    align-self: center;
+    position: static;
+    transform: none;
+  }
+
+  .btn-primary {
+    grid-column: 2;
+    justify-self: center;
+    position: static; /* Mengembalikan dari absolute ke posisi normal */
+    transform: none;
+  }
+
+  /* Styling Hamburger 2 Garis */
+  .hamburger {
+    display: flex;
+    background: transparent;
+    border: none;
+        cursor: pointer;
+        padding: 0;
+        width: 32px;
+        height: 32px;
+        position: relative;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 1001;
+        gap: 5px;
+        margin: 0;
+  }
+
+  .hamburger .bar {
+    display: block;
+        width: 20px;
+        height: 2px;
+        background-color: #ffffff;
+        border-radius: 2px;
+        transform-origin: center;  
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+.hamburger.active .bar:first-child {
+  transform: translateY(3.5px) rotate(25deg);
+}
+
+/* Garis Bawah: Naik tepat 4px lalu putar -45° */
+.hamburger.active .bar:last-child {
+  transform: translateY(-3.5px) rotate(-25deg);
+
+  }
+
+  /* Menu Dropdown saat Hamburger diklik */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    text-align: center;
+    grid-column: 1 / -1; /* Memenuhi dari ujung kiri ke kanan */
+    grid-row: 2; /* Dipaksa turun di baris kedua di bawah tombol */
+    padding-top: 1.2rem;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .mobile-only {
+    display: none;
+  }
+
+  .navbar:has(.nav-links.active) .nav-buttons {
+  display: none !important;
+}
+
+
+}
