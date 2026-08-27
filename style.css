@@ -161,38 +161,41 @@ body {
     }
 
 .dev-widgets {
-    position: absolute;
-    right: -100px;
-    bottom: -20px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+  /* Hapus position: absolute agar tidak menutupi tombol */
+  position: relative; 
+  margin: 2.5rem auto 0 auto; /* Memberi jarak aman dari tombol di atasnya */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  width: 100%;
+  max-width: 360px; /* Menjaga agar ukuran widget tetap proporsional */
 }
 
 .glass-card {
-    background: rgba(255, 255, 255, 0.18);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 15px 20px;
-    border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 1.2rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    animation: float 4s ease-in-out infinite alternate;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 12px 16px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  animation: float 4s ease-in-out infinite alternate;
 }
 
 .glass-card:nth-child(2) {
-    animation-delay: 1s;
+  animation-delay: 1s;
 }
 
+/* Kartu JavaScript otomatis di baris 2 penuh */
 .glass-card:nth-child(3) {
-      grid-column: span 2;
-      animation-delay: 2s;
-    }
+  grid-column: 1 / -1;
+  animation-delay: 2s;
+}
 
 @keyframes float {
       0% { transform: translateY(0px); }
@@ -209,6 +212,27 @@ footer {
 
 
 @media (max-width: 768px) {
+
+.hero {
+    margin: 1.5rem 1rem;            /* Beri jarak dari tepi layar HP */
+    padding: 2.5rem 1.5rem;          /* Ruang dalam kartu */
+    background: rgba(255, 255, 255, 0.08); /* Latar transparan tipis */
+    backdrop-filter: blur(16px);     /* Efek buram ala kaca */
+    -webkit-backdrop-filter: blur(16px);
+    border: 1.5px solid rgba(255, 255, 255, 0.4); /* Pinggiran putih transparan */
+    border-radius: 24px;             /* Sudut melengkung */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+.hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+
+
+
   .navbar {
     display: flex;
     justify-content: space-between;
@@ -306,6 +330,40 @@ footer {
 
   .navbar:has(.nav-links.active) .nav-buttons {
   display: none !important;
+}
+
+.dev-widgets {
+    position: relative;
+    margin-top: 2rem;
+    left: 0;
+    bottom: 0;
+  }
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 10px 14px;        /* Padding sedikit diperkecil agar teks muat 1 baris */
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.95rem;        /* Ukuran font disesuaikan agar tulisan panjang tidak meluber */
+  white-space: nowrap;       /* Mencegah teks patah/turun baris */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  animation: float 4s ease-in-out infinite alternate;
+}
+
+.glass-card:nth-child(2) {
+  animation-delay: 1s;
+}
+
+/* Kartu ketiga (JavaScript) melebar penuh di baris baru */
+.glass-card:nth-child(3) {
+  grid-column: 1 / -1;       /* Mengambil span dari kolom pertama sampai akhir */
+  animation-delay: 2s;
 }
 
 
