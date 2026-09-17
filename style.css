@@ -1,15 +1,14 @@
 
 * {
-     margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 body {
     min-height: 100vh;
-    color: #ffffff;
-      /* Gradasi warna latar lembut ala pemandangan teal/pink */
+    color: #ffffff; 
     background: linear-gradient(180deg, #62a3ab 0%, #7db9be 45%, #e1b4b9 75%, #5a8e93 100%);
     background-attachment: fixed;
     display: flex;
@@ -27,16 +26,16 @@ body {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    }
+}
 
 .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: #ffffff;
-    }
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #ffffff;
+}
 
 .nav-links {
     display: flex;
@@ -45,15 +44,15 @@ body {
 }
 
  .nav-links a {
-      color: rgba(255, 255, 255, 0.85);
-      text-decoration: none;
-      font-size: 0.95rem;
-      transition: color 0.3s;
-    }
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
 
 .nav-links a:hover {
-      color: #ffffff;
-    }
+    color: #ffffff;
+}
 
 .nav-buttons {
     display: flex;
@@ -61,48 +60,48 @@ body {
 }
 
 .btn-secondary {
-      background: rgba(255, 255, 255, 0.2);
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      color: white;
-      padding: 0.6rem 1.2rem;
-      border-radius: 20px;
-      cursor: pointer;
-      backdrop-filter: blur(5px);
-      transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
 }
 
 .btn-primary {
-      background: linear-gradient(135deg, #4bd5ca, #7d96ed);
-      border: none;
-      color: white;
-      padding: 0.6rem 1.4rem;
-      border-radius: 20px;
-      cursor: pointer;
-      font-weight: 600;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
-    }
+    background: linear-gradient(135deg, #4bd5ca, #7d96ed);
+    border: none;
+    color: white;
+    padding: 0.6rem 1.4rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
 
 .btn-secondary:hover, .btn-primary:hover {
-      transform: translateY(-2px);
-      opacity: 0.9;
-    }
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
 
 .hamburger {
-  display: none;
+    display: none;
 }
 
 .mobile-only {
-  display: none; /* Sembunyi di Desktop */
+    display: none; /* Sembunyi di Desktop */
 }
 
 .hero {
-      position: relative;
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
-      padding: 4rem 2rem;
-    }
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 4rem 2rem 5rem;
+}
 
 .badge {
       display: inline-block;
@@ -162,13 +161,12 @@ body {
 
 .dev-widgets {
   /* Hapus position: absolute agar tidak menutupi tombol */
-  position: relative; 
-  margin: 2.5rem auto 0 auto; /* Memberi jarak aman dari tombol di atasnya */
+  position: absolute; 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 12px;
-  width: 100%;
-  max-width: 360px; /* Menjaga agar ukuran widget tetap proporsional */
+  right: -80px;
+  bottom: 20px;
 }
 
 .glass-card {
@@ -185,6 +183,7 @@ body {
   font-size: 1rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   animation: float 4s ease-in-out infinite alternate;
+  white-space: nowrap;
 }
 
 .glass-card:nth-child(2) {
@@ -201,6 +200,216 @@ body {
       0% { transform: translateY(0px); }
       100% { transform: translateY(-12px); }
     }
+
+.projects-section {
+  max-width: 1200px;
+  margin: 4rem auto 2rem auto;
+  padding: 0 2rem;
+  text-align: left;
+  width: 100%;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.projects-grid {
+  display: flex;
+  gap: 1.8rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Card Utama (Outer Glass Container) */
+.project-card {
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  border-radius: 24px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Kotak Gambar / Preview (Inner Gradient Box) */
+.project-image-box {
+  width: 100%;
+  height: 220px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  color: #ffffff;
+  font-size: 1.05rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.project-image-box iframe {
+  width: 1280px;
+  height: 800px;
+  border: none;
+  transform: scale(0.285);
+  transform-origin: 0 0;
+}
+
+.project-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Technology Tags */
+.tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  padding: 0.25rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* Button Visit Live */
+.btn-visit {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-top: 0.2rem;
+  transition: background 0.3s ease;
+}
+
+.btn-visit:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+@media (max-width: 1078px) {
+
+  .hero {
+    padding: 3rem 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .dev-widgets {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .glass-card:nth-child(3) {
+    grid-column: auto; /* Kembalikan kartu ketiga ke baris sejajar */
+  }
+
+  .projects-section {
+    margin-top: 0;
+    padding: 0 2rem;
+    text-align: center;
+    align-items: center;
+  }
+
+  .section-title {
+    margin-top: 0;
+    text-align: center;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    border-radius: 16px;
+    margin-bottom: 1.5rem;
+  }
+
+  .project-image-box {
+    height: 480px;
+    width: 100%;
+  }
+
+  .project-image-box iframe {
+    /* Skala disesuaikan untuk lebar kotak baru (~380px / 1280px) */
+    transform: scale(0.42);
+    
+  }
+
+  .projects-grid {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 2rem;
+  }
+
+  .project-card {
+    max-width: 580px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-title {
+    text-align: center;
+  }
+
+}
+
+@media (max-width: 900px) {
+  .projects-grid {
+    flex-direction: column;
+  }
+  
+  .project-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .project-image-box {
+    width: 100%;
+    height: 160px;
+  }
+  
+  .projects-section {
+    padding: 0 1.5rem;
+  }
+}
 
 
 footer {
@@ -275,10 +484,10 @@ footer {
     display: flex;
     background: transparent;
     border: none;
-        cursor: pointer;
-        padding: 0;
-        width: 32px;
-        height: 32px;
+    cursor: pointer;
+    padding: 0;
+    width: 32px;
+    height: 32px;
         position: relative;
         flex-direction: column;
         justify-content: center;
